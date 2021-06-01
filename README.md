@@ -1,8 +1,6 @@
 # Overview
 
-This project examines how petrol prices in the US change over the course of a year as well as how they vary by state.
-
-Collection and analysis of average petrol price data for each US state over the course of a year.
+This program scrapes average daily petrol prices across all 50 U.S. states (and the District of Columbia) and aggregates them in spreadsheet format; first-time runs of the program create the spreadsheet, and subsequent runs populate the spreadsheet with additional data. Example data after running the program for 17 consecutive days has been included.
 
 # Files
 
