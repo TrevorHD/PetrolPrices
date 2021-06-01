@@ -1,4 +1,4 @@
-# ----- Load necessary libraries --------------------------------------------------------------------------
+##### Load necessary libraries ----------------------------------------------------------------------------
 
 library(XML)
 library(tidyverse)
@@ -7,7 +7,7 @@ library(tidyverse)
 
 
 
-# ----- Retrieve data -------------------------------------------------------------------------------------
+##### Retrieve data ---------------------------------------------------------------------------------------
 
 # Function to scrape and parse petrol price data
 Data.Scrape <- function(){
@@ -39,13 +39,14 @@ Data.Scrape <- function(){
   names(data) <- c("State", "Regular", "MidGrade", "Premium", "Diesel")
   data <- cbind(DayMonth, data)
   
+  # Return data frame
   return(data)}
 
 
 
 
 
-# ----- Write data ----------------------------------------------------------------------------------------
+##### Write data ------------------------------------------------------------------------------------------
 
 # Function to write data to either a new or existing csv
 Data.Write <- function(newsheet = FALSE){
@@ -73,7 +74,7 @@ Data.Write <- function(newsheet = FALSE){
 
 
 
-# ----- Subsequent data retrieval -------------------------------------------------------------------------
+##### Subsequent data retrieval ---------------------------------------------------------------------------
 
 # Run the following code to add data to the existing dataset
 # Use newsheet = TRUE if this is the first time collecting the data
