@@ -13,11 +13,10 @@ library(tidyverse)
 Data.Scrape <- function(){
   
   # Download page as HTML
-  download.file("https://gasprices.aaa.com/state-gas-price-averages/",
-                destfile = "C:\\Users/Trevor Drees/Documents/test.html")
+  download.file("https://gasprices.aaa.com/state-gas-price-averages/", destfile = "test.html")
   
   # Parse HTML document
-  page <- htmlParse("C:\\Users/Trevor Drees/Documents/test.html")
+  page <- htmlParse("test.html")
   
   # Read any instance of <table> into data frame
   # In this case, there's only one
@@ -61,14 +60,14 @@ Data.Write <- function(newsheet = FALSE){
   if(newsheet == FALSE){
     
     # Set current data as data from the existing csv
-    data.current <- read.csv("C:\\Users/Trevor Drees/Documents/PetrolData.csv")
+    data.current <- read.csv("PetrolData.csv")
     
     # Scrape data and add it to the existing csv
     data.current <- rbind(Data.Scrape(), data.current)
     data.current <- arrange(data.current, State, Month, Day)}
   
   # Write data frame to csv
-  write.csv(data.current, file = "C:\\Users/Trevor Drees/Documents/PetrolData.csv", row.names = FALSE)}
+  write.csv(data.current, file = "PetrolData.csv", row.names = FALSE)}
 
 
 
