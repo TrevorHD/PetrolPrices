@@ -8,6 +8,10 @@ This program scrapes average daily petrol prices across all 50 U.S. states (and 
 
 # Files
 
+## Data
+
 **PetrolData** *(.csv)* - Spreadsheet containing daily average prices of 3 petrol grades (regular, mid-grade, and premium) and diesel for all 50 US states and the District of Columbia.
+
+## Scripts
 
 **PetrolPrices** *(.R)* - Script that scrapes petrol price data from AAA and writes it to the main spreadsheet.
