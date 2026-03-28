@@ -10,8 +10,8 @@ A program collecting data on average daily petrol prices across all 50 U.S. stat
 
 ## Data
 
-**PetrolData** *(.csv)* - Spreadsheet containing 17 days of AAA average price data on 3 petrol grades (regular, mid-grade, and premium) and diesel for all 50 US states and the District of Columbia.
+**PP_Data** *(.csv)* - Spreadsheet with data on average petrol prices across all 50 US states and the District of Columbia.
 
 ## Scripts
 
-**PetrolPrices** *(.R)* - Script that scrapes petrol price data from AAA and writes it to the main spreadsheet.
+**PP_Script** *(.R)* - Script for collecting petrol price data from AAA and writing it to a CSV.
