@@ -1,7 +1,11 @@
-##### Load necessary libraries ----------------------------------------------------------------------------
+##### Prepare workspace -----------------------------------------------------------------------------------
 
+# Load libraries
 library(XML)
 library(tidyverse)
+
+# Set working directory
+setwd("~/GitHub/PetrolPrices")
 
 
 
@@ -13,10 +17,10 @@ library(tidyverse)
 Data.Scrape <- function(){
   
   # Download page as HTML
-  download.file("https://gasprices.aaa.com/state-gas-price-averages/", destfile = "test.html")
+  download.file("https://gasprices.aaa.com/state-gas-price-averages/", destfile = "temp.html")
   
   # Parse HTML document
-  page <- htmlParse("test.html")
+  page <- htmlParse("temp.html")
   
   # Read any instance of <table> into data frame
   # In this case, there's only one
@@ -60,14 +64,14 @@ Data.Write <- function(newsheet = FALSE){
   if(newsheet == FALSE){
     
     # Set current data as data from the existing csv
-    data.current <- read.csv("PetrolData.csv")
+    data.current <- read.csv("Data/PP_Data.csv")
     
     # Scrape data and add it to the existing csv
     data.current <- rbind(Data.Scrape(), data.current)
     data.current <- arrange(data.current, State, Month, Day)}
   
   # Write data frame to csv
-  write.csv(data.current, file = "PetrolData.csv", row.names = FALSE)}
+  write.csv(data.current, file = "Data/PP_Data.csv", row.names = FALSE)}
 
 
 
@@ -79,3 +83,4 @@ Data.Write <- function(newsheet = FALSE){
 # Use newsheet = TRUE if this is the first time collecting the data
 Data.Scrape()
 Data.Write(newsheet = FALSE)
+
